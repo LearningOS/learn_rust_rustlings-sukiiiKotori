@@ -1,14 +1,14 @@
 // errors3.rs
-// This is a program that is trying to use a completed version of the
-// `total_cost` function from the previous exercise. It's not working though!
-// Why not? What should we do to fix it?
-// Execute `rustlings hint errors3` for hints!
+//这是一个试图使用完整版本的程序
+//上一个练习中的 `total_cost` 函数。但它不工作！
+//为什么不？我们应该怎么做才能修复它？
+//执行 `rustlings hint errors3` 获取提示！
 
-// I AM NOT DONE
+
 
 use std::num::ParseIntError;
 
-fn main() {
+fn main()->Result<(), ParseIntError>{
     let mut tokens = 100;
     let pretend_user_input = "8";
 
@@ -20,6 +20,7 @@ fn main() {
         tokens -= cost;
         println!("You now have {} tokens.", tokens);
     }
+    Ok(())
 }
 
 pub fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
